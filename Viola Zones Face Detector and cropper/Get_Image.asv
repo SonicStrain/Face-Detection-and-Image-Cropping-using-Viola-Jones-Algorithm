@@ -1,0 +1,16 @@
+%Enter the location of the folder containing images
+ImgFol = 'C:\Users\User\Desktop\Viola Zones Face Detector and cropper\jaffedbase';
+%Enter the location where you want to receiev
+ImgLoc = 'C:\Users\User\Desktop\Viola Zones Face Detector and cropper\result';
+
+
+str2 = ['C:\Users\User\Desktop\Viola Zones Face Detector and cropper\result','\'];
+str1 = [str2,'*.TIFF'];
+
+Ifolder = dir(str);
+
+for ii = 1:length(Ifolder)
+    str = [str2,Ifolder(ii).name];
+    join(str);
+    getImage = Viola_Jones_Face_Detection(str,ImgLoc);
+end
